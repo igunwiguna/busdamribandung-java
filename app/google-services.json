@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "837081496494",
+    "firebase_url": "https://busdamri-native-java.firebaseio.com",
+    "project_id": "busdamri-native-java",
+    "storage_bucket": "busdamri-native-java.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837081496494:android:9f9135c72dca97a9",
+        "android_client_info": {
+          "package_name": "com.example.igunwiguna.damribandung"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837081496494-1b9bt8io23enic3d9fqliumck6b2jk3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.igunwiguna.damribandung",
+            "certificate_hash": "0e3b93807e8c0372d67aed3b053dad5d132f6f9a"
+          }
+        },
+        {
+          "client_id": "837081496494-bnv7s63t5uml488aj5pfkm6fcgco45ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC49_3OnooLTUJHqokHzqloUyB7qFgWsQI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837081496494-bnv7s63t5uml488aj5pfkm6fcgco45ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
