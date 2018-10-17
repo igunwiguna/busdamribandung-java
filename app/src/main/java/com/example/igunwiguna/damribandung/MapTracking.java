@@ -1,8 +1,8 @@
 package com.example.igunwiguna.damribandung;
 
 import android.location.Location;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 
 import com.example.igunwiguna.damribandung.Model.Tracking;
@@ -10,7 +10,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -22,11 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 import java.text.DecimalFormat;
-
-import static android.support.transition.CircularPropagation.distance;
 
 public class MapTracking extends FragmentActivity implements OnMapReadyCallback {
 
@@ -71,7 +66,7 @@ public class MapTracking extends FragmentActivity implements OnMapReadyCallback 
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapShot:dataSnapshot.getChildren())
                 {
-                    Tracking tracking = postSnapShot.getValue(Tracking.class);
+                    Tracking tracking = postSnapShot.getValue (Tracking.class);
 
                     //Menambah marker untuk lokasi supir
                     LatLng friendLocation = new LatLng(Double.parseDouble(tracking.getLat()),
@@ -88,10 +83,10 @@ public class MapTracking extends FragmentActivity implements OnMapReadyCallback 
                     friend.setLongitude(Double.parseDouble(tracking.getLng()));
 
                     //Menghapus marker yang lama
-                    nMap.clear();
+//                    nMap.clear();
 
                     //Membuat fungsi kalkulasi distance  lokasi
-                    distance(currentUser,friend);
+//                    distance(currentUser,friend);
 
                     //Menambahkan Penumpang pada map
                     nMap.addMarker (new MarkerOptions()
@@ -105,9 +100,6 @@ public class MapTracking extends FragmentActivity implements OnMapReadyCallback 
 
                 LatLng current = new LatLng(lat,lng);
                 nMap.addMarker(new MarkerOptions().position(current).title(FirebaseAuth.getInstance().getCurrentUser().getEmail()));
-
-
-
 
 
             }
@@ -134,7 +126,7 @@ public class MapTracking extends FragmentActivity implements OnMapReadyCallback 
     }
 
     private double rad2deg(double rad) {
-        return (rad * Math.PI);
+        return (rad * 180 / Math.PI);
     }
 
     private double deg2rad(double deg) {
@@ -144,12 +136,6 @@ public class MapTracking extends FragmentActivity implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         nMap = googleMap;
-
-        // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-34, 151);
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-
 
     }
 }

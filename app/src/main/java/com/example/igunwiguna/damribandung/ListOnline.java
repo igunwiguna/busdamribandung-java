@@ -109,10 +109,9 @@ public class ListOnline extends AppCompatActivity implements GoogleApiClient.Con
 //        Dibawah ini merupakan Online List
 
         updateList();
-
-
-
     }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -153,8 +152,8 @@ public class ListOnline extends AppCompatActivity implements GoogleApiClient.Con
         }
         else
         {
-            //Toast.makeText(this, "Coudldn't get location", Toast.LENGTH_SHORT).show();
-            Log.d("TEST","Couldn't load location");
+            //Toast.makeText(this, "Tidak Dapat Memuat Lokasi", Toast.LENGTH_SHORT).show();
+            Log.d("TEST","Tidak Dapat Memuat Lokasi");
         }
 
     }
@@ -208,7 +207,8 @@ public class ListOnline extends AppCompatActivity implements GoogleApiClient.Con
                             viewHolder.txtEmail.setText(model.getEmail());
 
                         //Implement item click of Recycle View
-                        viewHolder.itemClickListener = new ItemClickListener() {
+//
+                        viewHolder.itemClickListenener = new ItemClickListenener() {
                             @Override
                             public void onClick(View view, int position) {
 
@@ -232,15 +232,18 @@ public class ListOnline extends AppCompatActivity implements GoogleApiClient.Con
                         View itemView = LayoutInflater.from(getBaseContext())
                                 .inflate(R.layout.user_layout,parent, false);
                         return new ListOnlineViewHolder(itemView);
+
                     }
+
                 };
 
-                adapter.startListening();
                 listOnline.setAdapter(adapter);
+                adapter.startListening();
                 adapter.notifyDataSetChanged();
 
-
     }
+
+
 
     private void setupSystem() {
         onlineRef.addValueEventListener(new ValueEventListener() {

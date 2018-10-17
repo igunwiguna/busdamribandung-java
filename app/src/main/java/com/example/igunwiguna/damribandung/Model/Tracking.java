@@ -7,7 +7,7 @@ public class Tracking {
 
     }
 
-    public Tracking(String email, String uid, String lat, String lang) {
+    public Tracking(String email, String uid, String lat, String lng) {
         this.email = email;
         this.uid = uid;
         this.lat = lat;
@@ -42,7 +42,7 @@ public class Tracking {
         return lng;
     }
 
-    public void setLng(String lang) {
-        this.lng = lang;
+    public void setLng(String lng) {
+        this.lng = lng;
     }
 }
